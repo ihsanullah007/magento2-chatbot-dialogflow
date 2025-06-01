@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="IU_Chatbot::css/chat.css"/>
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="IU\Chatbot\Block\Chat" name="iu_chatbot" template="IU_Chatbot::chat.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="iu_chatbot" xsi:type="array">
+                                <item name="component" xsi:type="string">IU_Chatbot/js/chat</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

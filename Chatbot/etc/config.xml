@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <chatbot>
+            <general>
+                <enabled>1</enabled>
+                <project_id></project_id>
+                <service_account_key></service_account_key>
+                <welcome_message>Hi! How can I help you today?</welcome_message>
+                <position>bottom-right</position>
+            </general>
+        </chatbot>
+    </default>
+</config>

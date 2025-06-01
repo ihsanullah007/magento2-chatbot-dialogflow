@@ -1,0 +1,29 @@
+{
+  "name": "iu/chatbot",
+  "description": "Magento 2 extension to integrate Google Dialogflow AI chatbot.",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Ihsan Ullah",
+      "email": "spidertrixconz@gmail.com",
+      "homepage": "https://www.upwork.com/freelancers/~01151479e9f5388848?viewMode=1",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.4 || ^8.1",
+    "magento/framework": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "IU\\Chatbot\\": ""
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<?php
+/** @var \IU\Chatbot\Helper\Data $helper */
+$helper = $this->helper('IU\Chatbot\Helper\Data');
+?>
+<?php if ($helper->isEnabled()): ?>
+    <div id="iu-chatbot-container"
+         class="iu-chatbot-container"
+         data-position="<?= $block->escapeHtmlAttr($helper->getPosition()) ?>">
+        <button id="iu-chatbot-btn"
+                class="iu-chatbot-btn"
+                title="<?= $block->escapeHtmlAttr(__('Chat with us')) ?>"
+                aria-label="<?= $block->escapeHtmlAttr(__('Open chat window')) ?>"
+                role="button"
+                tabindex="0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M8 2a6 6 0 0 0-4.472 10.207c-.095.387-.245.865-.45 1.367a.625.625 0 0 0 .86.757 7.962 7.962 0 0 0 3.645-2.061 6 6 0 1 0 0-10.27zM5 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+            </svg>
+        </button>
+
+        <div id="iu-chatbot-window"
+             class="iu-chatbot-window"
+             aria-live="polite"
+             aria-label="<?= $block->escapeHtmlAttr(__('Chatbot window')) ?>"
+             role="region">
+            <div id="iu-chatbot-header" class="iu-chatbot-header">
+                <span><?= $block->escapeHtml(__('Magento Support')) ?></span>
+                <button aria-label="<?= $block->escapeHtmlAttr(__('Close chat')) ?>" id="iu-chatbot-close">×</button>
+            </div>
+            <div id="iu-chatbot-messages" class="iu-chatbot-messages" tabindex="0">
+                <div class="iu-chat-message iu-chat-bot"><?= $block->escapeHtml($helper->getWelcomeMessage()) ?></div>
+            </div>
+            <form id="iu-chatbot-input-area" class="iu-chatbot-input-area" onsubmit="return false;">
+                <input type="text"
+                       id="iu-chatbot-input"
+                       class="iu-chatbot-input"
+                       placeholder="<?= $block->escapeHtmlAttr(__('Type your message...')) ?>"
+                       autocomplete="off"
+                       aria-label="<?= $block->escapeHtmlAttr(__('Chat message input')) ?>" />
+                <button id="iu-chatbot-send"
+                        class="iu-chatbot-send"
+                        aria-label="<?= $block->escapeHtmlAttr(__('Send message')) ?>"
+                        type="submit">►</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/x-magento-init">
+    {
+        "#iu-chatbot-container": {
+            "iuChatbot": {
+                "webhookUrl": "<?= $block->escapeUrl($block->getUrl('chatbot/webhook/index')) ?>",
+                "projectId": "<?= $block->escapeHtmlAttr($helper->getProjectId()) ?>",
+                "sessionId": "<?= uniqid('', true) ?>"
+            }
+        }
+    }
+    </script>
+<?php endif; ?>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="IU_Chatbot::config" title="IU Chatbot" module="IU_Chatbot" 
+             sortOrder="100" resource="IU_Chatbot::config" />
+        <add id="IU_Chatbot::config_settings" title="Configuration" module="IU_Chatbot" 
+             parent="IU_Chatbot::config" action="adminhtml/system_config/edit/section/chatbot" 
+             resource="IU_Chatbot::config" sortOrder="10" />
+    </menu>
+</config>

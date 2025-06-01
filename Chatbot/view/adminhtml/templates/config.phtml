@@ -1,0 +1,37 @@
+<?php
+/** @var \Magento\Config\Block\System\Config\Form $block */
+?>
+<div class="iuchatbot-config-section">
+    <div class="admin__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__('IU Chatbot Configuration')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <?= $block->getFormHtml() ?>
+    </div>
+    <div class="admin__page-section-item-content">
+        <div class="message info">
+            <p><?= $block->escapeHtml(__('Configure your Dialogflow integration settings here.')) ?></p>
+            <p><?= $block->escapeHtml(__('You need to provide your Dialogflow project ID and service account JSON key.')) ?></p>
+        </div>
+    </div>
+</div>
+
+<style>
+.iuchatbot-config-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.iuchatbot-config-section .admin__page-section-title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.iuchatbot-config-section .title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #41362f;
+}
+</style>
